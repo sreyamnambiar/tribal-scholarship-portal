@@ -60,3 +60,4 @@ backend/storage/**
 !backend/storage/.gitkeep
 scratch/
 
+.vercel
