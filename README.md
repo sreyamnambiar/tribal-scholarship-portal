@@ -86,6 +86,15 @@ For persistent data, run MongoDB and set `MONGO_URI` in `backend/.env` to the ap
 
 The login page intentionally does not display default credentials. Applicant access is created through registration, while administrative access is managed by the backend seed/configuration process.
 
+## Demo Admin Access
+
+For local or demo deployments, the seeded administrator account is:
+
+- Email: `admin@gmail.com`
+- Password: `Admin@2026`
+
+Change this demo password before using the application with real users or data.
+
 ## Accessibility
 
 The header includes text-size controls, keyboard-focusable navigation, a skip-to-content link, English/Hindi switching, and a speaker button. Select **Read aloud** to have the browser read the current page content; select **Stop** to cancel playback.

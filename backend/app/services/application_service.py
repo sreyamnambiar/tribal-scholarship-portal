@@ -106,12 +106,12 @@ async def seed_users_if_empty(db: AsyncIOMotorDatabase) -> None:
     """
     now = datetime.now(timezone.utc)
     # Admin
-    existing_admin = await db["users"].find_one({"email": "admin@mota.gov.in"})
+    existing_admin = await db["users"].find_one({"email": "admin@gmail.com"})
     if not existing_admin:
         admin_doc = {
             "_id": "USR-ADM-01",
             "name": "Dr. Navaljit Kapoor",
-            "email": "admin@mota.gov.in",
+            "email": "admin@gmail.com",
             "phone": "9810054321",
             "hashed_password": hash_password("Admin@2026"),
             "role": "ADMIN",

@@ -109,9 +109,9 @@ def run_tests():
     print(f"  [OK] Wrong password correctly rejected with HTTP 401 (NOT Failed to fetch): {body['detail']}")
 
     # Test 5: Admin with correct credentials
-    print("\n[TEST 5] Logging in ADMIN with correct credentials (admin@mota.gov.in)...")
+    print("\n[TEST 5] Logging in ADMIN with correct credentials (admin@gmail.com)...")
     status, body, headers = make_request(primary_base, "/auth/login", method="POST", data={
-        "email": "admin@mota.gov.in",
+        "email": "admin@gmail.com",
         "password": "Admin@2026"
     })
     assert status == 200, f"Expected 200 OK, got {status}: {body}"
@@ -122,7 +122,7 @@ def run_tests():
     # Test 6: Admin with wrong credentials
     print("\n[TEST 6] Logging in ADMIN with INCORRECT password...")
     status, body, headers = make_request(primary_base, "/auth/login", method="POST", data={
-        "email": "admin@mota.gov.in",
+        "email": "admin@gmail.com",
         "password": "BadAdminPassword999"
     })
     assert status == 401, f"Expected 401 Unauthorized, got {status}: {body}"
@@ -152,7 +152,7 @@ def run_tests():
     print("\n[TEST 8.B] Testing GET /api/auth/me with Admin Bearer Token...")
     status, body, headers = make_request(primary_base, "/auth/me", token=admin_token)
     assert status == 200, f"Expected 200 OK, got {status}: {body}"
-    assert body["email"] == "admin@mota.gov.in", f"Expected admin@mota.gov.in, got {body['email']}"
+    assert body["email"] == "admin@gmail.com", f"Expected admin@gmail.com, got {body['email']}"
     assert body["role"] == "ADMIN", f"Expected ADMIN, got {body['role']}"
     print(f"  [OK] /auth/me returned correct admin dossier: {body['name']} ({body['email']})")
 
