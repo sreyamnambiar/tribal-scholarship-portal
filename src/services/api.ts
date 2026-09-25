@@ -4,7 +4,7 @@
  * Note: MongoDB credentials must NEVER be stored or exposed in this frontend layer.
  */
 
-const DEFAULT_API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api';
+const DEFAULT_API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
 
 class ApiClient {
   private token: string | null = null;
